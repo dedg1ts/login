@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (ageVal) {
             saving = true;
             sig.disabled = true;
-            saveStatus.innerText = "Registrando...";
+            saveStatus.innerText = "Signin in...";
 
             try {
                 const response = await fetch('/api/respostas', {
@@ -120,14 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (view === "age") {
             const age = Number(ageInp.value);
             if (!Number.isInteger(age) || age < 1 || age > 120) {
-                ageValAction(false);
+                ageValAction(true);
             } else {
                 ageValAction(true);
             }
             ageInp.addEventListener('change', function () {
                 const changedAge = Number(this.value);
                 if (!Number.isInteger(changedAge) || changedAge < 1 || changedAge > 120) {
-                    ageValAction(false);
+                    ageValAction(true);
                 } else {
                     ageValAction(true);
                 }
