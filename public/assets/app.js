@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('section_final').classList.remove('d-none');
                 view = "final";
             } catch {
-                saveStatus.innerText = "Não foi possível registrar agora. Tente novamente.";
+                saveStatus.innerText = "It is not possible to login right now. Try Again.";
             } finally {
                 saving = false;
                 sig.disabled = false;
