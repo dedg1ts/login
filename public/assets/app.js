@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#btn_final').forEach((b) => {
         b.addEventListener('click', () => {
             //close the window
-            window.open(location, '_self').close();
+            //window.open(location, '_self').close();
         })
     })
 })
