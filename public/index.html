@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/mark.svg" type="image/svg+xml" />
+    <title>CWG 2026 | Confirmação de participação</title>
+    <link rel="stylesheet" href="assets/app.css" />
+</head>
+
+<body>
+    <section id="section_uname">
+        <div class="auth-wrapper">
+            <div class="brand"><img src="/mark.svg" alt="" /><span>CWG 2026</span></div>
+            <h2 class="title mb-16 mt-16">Confirme sua participação</h2>
+            <form>
+                <div class="mb-16">
+                    <p id="error_uname" class="error"></p>
+                    <input id="inp_uname" type="email" name="email" class="input" placeholder="seu.email@empresa.com" autocomplete="email" maxlength="254" />
+                </div>
+            </form>
+            <div>
+                <p class="mb-16 fs-13">Formulário autorizado para o exercício Cyber War Games.</p>
+                <p class="mb-16 fs-13">
+                    Os dados serão usados somente para registrar a participação no exercício.
+                </p>
+            </div>
+            <div>
+                <button class="btn" id="btn_next">Continuar</button>
+            </div>
+        </div>
+        <div class="opts">
+            <p class="has-icon mb-0" style="font-size:15px;"><span class="icon"><img src="/mark.svg"
+                        width="30" alt="" /></span> Ambiente de conscientização</p>
+        </div>
+    </section>
+
+    <section id="section_pwd" class="d-none">
+        <div class="auth-wrapper">
+            <div class="brand"><img src="/mark.svg" alt="" /><span>CWG 2026</span></div>
+            <div class="identity w-100 mt-16 mb-16">
+                <button class="back">
+                    <img src="assets/back.png" />
+                </button>
+                <span id="user_identity">a@b.com</span>
+            </div>
+            <h2 class="title mb-16">Informe sua idade</h2>
+            <form>
+                <div class="mb-16">
+                    <p id="error_age" class="error"></p>
+                    <input id="inp_age" type="number" name="age" class="input" placeholder="Idade" min="1" max="120" inputmode="numeric" autocomplete="off" />
+                </div>
+            </form>
+            <div>
+                <p class="mb-16 fs-13">Confira os dados antes de registrar sua participação.</p>
+                <p id="save_status" class="mb-16 fs-13" role="status" aria-live="polite"></p>
+            </div>
+            <div>
+                <button class="btn" id="btn_sig">Registrar</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="section_final" class="d-none">
+        <div class="auth-wrapper">
+            <div class="brand"><img src="/mark.svg" alt="" /><span>CWG 2026</span></div>
+            <div class="identity w-100 mt-16 mb-16">
+                <span id="user_identity">a@b.com</span>
+            </div>
+            <h2 class="title mb-16">Participação registrada</h2>
+            <p class="p">Obrigado. As informações foram armazenadas com sucesso.</p>
+            <div class="btn-group">
+                <button class="btn" id="btn_final">Concluir</button>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <a href="#">Sobre o CWG</a>
+        <a href="#">Privacidade</a>
+    </footer>
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
