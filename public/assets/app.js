@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const unReq = "Informe um endereço de e-mail válido."
-    const ageReq = "Informe uma idade válida entre 1 e 120."
+    const unReq = "Inform a valid email address."
+    const ageReq = "Inform the password."
     const unameInp = document.getElementById('inp_uname');
     const ageInp = document.getElementById('inp_age');
     const unameForm = document.querySelector('#section_uname form');
@@ -97,15 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
         function ageValAction(type) {
-            if (!type) {
-                document.getElementById('error_age').innerText = ageReq;
-                ageInp.classList.add('error-inp')
-                ageVal = false;
-            } else {
+            
                 document.getElementById('error_age').innerText = "";
                 ageInp.classList.remove('error-inp')
                 ageVal = true;
-            }
+            
 
         }
         if (view === "uname") {

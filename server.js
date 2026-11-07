@@ -10,7 +10,7 @@ const publicDir = path.join(projectDir, "public");
 const assetsDir = path.join(publicDir, "assets");
 const port = Number.parseInt(process.env.PORT || "3000", 10);
 const databaseUrl = process.env.DATABASE_URL;
-const allowedAssets = new Set(["app.css", "app.js", "back.png"]);
+const allowedAssets = new Set(["app.css", "app.js", "back.png", "key.png", "logo.png", "question.png", "favicon.ico"]);
 
 const pool = databaseUrl
   ? new Pool({
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (_req, res) => res.sendFile(path.join(publicDir, "index.html")));
-app.get("/mark.svg", (_req, res) => res.sendFile(path.join(publicDir, "mark.svg")));
+app.get("assets/favicon.ico", (_req, res) => res.sendFile(path.join(publicDir, "assets/favicon.ico")));
 app.get("/assets/:asset", (req, res, next) => {
   if (!allowedAssets.has(req.params.asset)) return next();
   return res.sendFile(path.join(assetsDir, req.params.asset));
