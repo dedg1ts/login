@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         email: unameInp.value.trim().toLowerCase(),
-                        age: Number(ageInp.value)
+                        age: ageInp.value
                     })
                 });
 

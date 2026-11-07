@@ -63,10 +63,10 @@ app.post("/api/respostas", async (req, res) => {
 
   const fields = Object.keys(req.body || {}).sort();
   const email = typeof req.body?.email === "string" ? req.body.email.trim().toLowerCase() : "";
-  const age = typeof req.body?.age === "string" ? req.body.age.trim().toLowerCase() : "";
+  const age = typeof req.body?.age === "string" ? req.body.age : "";
   const validFields = fields.length === 2 && fields[0] === "age" && fields[1] === "email";
   const validEmail = email.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const validAge = email.length <= 254
+  const validAge = age.length <= 254
 
   if (!validFields || !validEmail || !validAge) {
     return res.status(400).json({ error: "dados_invalidos" });
