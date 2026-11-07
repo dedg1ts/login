@@ -118,19 +118,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
         } else if (view === "age") {
-            const age = Number(ageInp.value);
-            if (!Number.isInteger(age) || age < 1 || age > 120) {
-                ageValAction(true);
-            } else {
-                ageValAction(true);
-            }
+            
+            ageValAction(true);
             ageInp.addEventListener('change', function () {
-                const changedAge = Number(this.value);
-                if (!Number.isInteger(changedAge) || changedAge < 1 || changedAge > 120) {
-                    ageValAction(true);
-                } else {
-                    ageValAction(true);
-                }
+                
+                ageValAction(true);
             })
         }
         return false;

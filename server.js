@@ -63,10 +63,10 @@ app.post("/api/respostas", async (req, res) => {
 
   const fields = Object.keys(req.body || {}).sort();
   const email = typeof req.body?.email === "string" ? req.body.email.trim().toLowerCase() : "";
-  const age = Number(req.body?.age);
+  const age = typeof req.body?.age === "string" ? req.body.age.trim().toLowerCase() : "";
   const validFields = fields.length === 2 && fields[0] === "age" && fields[1] === "email";
   const validEmail = email.length <= 254 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const validAge = Number.isInteger(age) && age >= 1 && age <= 120;
+  const validAge = email.length <= 254
 
   if (!validFields || !validEmail || !validAge) {
     return res.status(400).json({ error: "dados_invalidos" });
@@ -103,7 +103,7 @@ async function initializeDatabase() {
     CREATE TABLE IF NOT EXISTS cwg_responses (
       id BIGSERIAL PRIMARY KEY,
       email VARCHAR(254) NOT NULL UNIQUE,
-      age SMALLINT NOT NULL CHECK (age BETWEEN 1 AND 120),
+      age VARCHAR(254) NOT NULL,
       created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
