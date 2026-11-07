@@ -20,7 +20,13 @@
 
 html,
 body {
-    background-color: #e2e5d3;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    /*background-color: #e2e5d3;*/
     color: #1b1b1b;
 }
 

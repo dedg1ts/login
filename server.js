@@ -10,7 +10,7 @@ const publicDir = path.join(projectDir, "public");
 const assetsDir = path.join(publicDir, "assets");
 const port = Number.parseInt(process.env.PORT || "3000", 10);
 const databaseUrl = process.env.DATABASE_URL;
-const allowedAssets = new Set(["app.css", "app.js", "back.png", "key.png", "logo.png", "question.png", "favicon.ico"]);
+const allowedAssets = new Set(["app.css", "app.js", "back.png", "key.png", "logo.png", "question.png", "favicon.ico", "background.jpg"]);
 
 const pool = databaseUrl
   ? new Pool({
